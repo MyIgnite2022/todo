@@ -1,9 +1,13 @@
+import { Input } from './components/Input'
 import './global.scss'
 
 function App() {
   
   return (
-   <p>Home</p>
+    <>
+    <Input />
+    <Input />
+    </>
   )
 }
 

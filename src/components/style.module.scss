@@ -1,0 +1,17 @@
+.input {
+  width: 100%;
+  background: var(--gray-500);
+  border-radius: 8px;
+  padding: 1rem;
+  border: none;
+  color: var(--gray-100);
+
+    &::placeholder {
+      color: var(--gray-300);
+    }
+
+    &:hover, 
+    &:focus {
+      border: 1px solid var(--purple-dark);
+    }
+}
