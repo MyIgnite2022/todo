@@ -1,4 +1,5 @@
 import { Checkbox } from './components/Checkbox'
+import { DeleteButton } from './components/DeleteButton'
 import { Input } from './components/Input'
 import './global.scss'
 
@@ -10,6 +11,7 @@ function App() {
     <Input />
     <Checkbox />
     <Checkbox />
+    <DeleteButton />
     </>
   )
 }
