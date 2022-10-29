@@ -1,3 +1,4 @@
+import { Checkbox } from './components/Checkbox'
 import { Input } from './components/Input'
 import './global.scss'
 
@@ -7,6 +8,8 @@ function App() {
     <>
     <Input />
     <Input />
+    <Checkbox />
+    <Checkbox />
     </>
   )
 }

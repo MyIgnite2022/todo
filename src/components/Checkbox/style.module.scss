@@ -1,0 +1,50 @@
+.groupCheckbox {
+  display: block;
+  width: 17px;
+  height: 17px;
+  background: none;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+
+  &:hover {
+    background: rgba($color: #5E60CE, $alpha: .2)
+  }
+
+  input {
+    display: block;
+    height: 0;
+    position: relative;
+
+    &:checked {
+      &::before {
+        content: '';
+        display: block;
+        width: 17px;
+        height: 17px;
+        background: url(../../assets/checked.svg);
+        background-size: 9px;
+        background-repeat: no-repeat;
+    
+        position: absolute;
+        top: 4px;
+        left: 2px;
+
+        z-index: 999;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        width: 15px;
+        height: 15px;
+        background: var(--purple-dark);
+        border-radius: 50%;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+
+        border: 1px solid var(--purple-dark);
+      }
+    }
+  }
+}
