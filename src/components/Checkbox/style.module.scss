@@ -6,6 +6,8 @@
   border-radius: 50%;
   border: 2px solid var(--blue);
 
+  transition: background 0.2s;
+
   &:hover {
     background: rgba($color: #5E60CE, $alpha: .2)
   }

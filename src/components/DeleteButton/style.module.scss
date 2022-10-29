@@ -6,6 +6,8 @@
   border: none;
   position: relative;
 
+  transition: background 0.2s;
+
   &:after {
     content: '';
     display: block;
