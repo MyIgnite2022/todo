@@ -12,6 +12,7 @@
 
     &:hover, 
     &:focus {
-      border: 1px solid var(--purple-dark);
+
+      outline: 1px solid var(--purple-dark);
     }
 }

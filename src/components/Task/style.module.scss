@@ -1,0 +1,17 @@
+.task {
+  display: flex; 
+  padding: 1rem;
+  background: var(--gray-500);
+  border-radius: 8px;
+
+  p {
+    width: 100%;
+    color: var(--gray-100);
+    padding: 0 .8rem;
+    font-size: 87.5%;
+  }
+
+  & + .task {
+    margin-top: 1rem;
+  }
+}
