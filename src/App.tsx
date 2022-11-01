@@ -8,7 +8,7 @@ import { StatusTasks } from './components/StatusTasks';
 import { Task } from './components/Task';
 import './global.scss';
 
-interface TasksProps {
+export interface TasksProps {
   description: string;
   isChecked: boolean;
 }
@@ -20,11 +20,11 @@ function App() {
     setTasks([
       {
         description: 'Task 1',
-        isChecked: false
+        isChecked: true
       },
       {
         description: 'Task 2',
-        isChecked: false
+        isChecked: true
       },
       {
         description: 'Task 3',
@@ -32,6 +32,10 @@ function App() {
       },
       {
         description: 'Task 4',
+        isChecked: false
+      },
+      {
+        description: 'Task 5',
         isChecked: false
       }
     ])
@@ -43,7 +47,7 @@ function App() {
       <Header />
       <Container>
         <Newtask />
-        <StatusTasks />
+        <StatusTasks tasks={tasks}/>
         <Box>
           { tasks.map(task => {
             return <Task key={task.description}/>
