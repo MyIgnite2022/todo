@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Box } from './components/Box';
 import { Container } from './components/Container';
 import { EmptyTasks } from './components/EmptyTasks';
@@ -15,7 +15,15 @@ export interface TasksProps {
 }
 
 function App() {
-  const [tasks, setTasks] = useState<TasksProps[]>([])
+  const [tasks, setTasks] = useState<TasksProps[]>(() => {
+    const localTasks = localStorage.getItem("tasks");
+
+    if (localTasks) {
+      return JSON.parse(localTasks);
+    }
+
+    return []
+  })
 
   function Tasks() {
     return tasks.map(task => (
@@ -28,7 +36,9 @@ function App() {
     ))
   }
 
-  console.log('tasks', tasks)
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks])
 
   return (
     <>
