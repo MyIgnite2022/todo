@@ -1,0 +1,29 @@
+.statusTasks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+
+  p {
+    display: flex;
+    gap: 8px;
+
+    font-size: .875rem;
+    color: var(--blue);
+    font-weight: bold;
+
+    &:last-child {
+      color: var(--purple);
+    }
+    
+  }
+
+  span {
+    font-size: .75rem;
+    color: var(--gray-200);
+
+    background: var(--gray-400);
+    padding: 2px 8px;
+    border-radius: 8px;
+  }
+}
