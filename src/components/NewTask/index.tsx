@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import { TasksProps } from "../../App";
 import { CreateButton } from "../CreateButton";
 import { Input } from "../Input";
@@ -24,7 +25,7 @@ export function Newtask({tasks, setTasks}: NewtaskProps) {
     const checkIfTaskExists = tasks.find(task => task.description === newTask)
 
     if(checkIfTaskExists) {
-      alert('A task já existe!')
+      toast('A tarefa já existe!')
       return
     }
 
