@@ -1,7 +1,8 @@
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Box } from './components/Box';
 import { Container } from './components/Container';
+import { EmptyTasks } from './components/EmptyTasks';
 import { Header } from './components/Header';
 import { Newtask } from './components/NewTask';
 import { StatusTasks } from './components/StatusTasks';
@@ -16,42 +17,24 @@ export interface TasksProps {
 function App() {
   const [tasks, setTasks] = useState<TasksProps[]>([])
 
-  useEffect(() => {
-    setTasks([
-      {
-        description: 'Task 1',
-        isChecked: true
-      },
-      {
-        description: 'Task 2',
-        isChecked: true
-      },
-      {
-        description: 'Task 3',
-        isChecked: false
-      },
-      {
-        description: 'Task 4',
-        isChecked: false
-      },
-      {
-        description: 'Task 5',
-        isChecked: false
-      }
-    ])
-  }, [])
-
+  function Tasks() {
+    return tasks.map(task => {
+      return <Task key={task.description} />
+    })
+  } 
 
   return (
     <>
       <Header />
       <Container>
-        <Newtask />
+        <Newtask tasks={tasks} setTasks={setTasks}/>
         <StatusTasks tasks={tasks}/>
         <Box>
-          { tasks.map(task => {
-            return <Task key={task.description}/>
-          })}
+          {
+            tasks.length
+            ? Tasks()
+            : <EmptyTasks /> 
+          }
         </Box>
       </Container>
     </>
