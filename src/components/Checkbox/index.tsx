@@ -1,9 +1,13 @@
-import styles from './style.module.scss'
+import styles from './style.module.scss';
 
-export function Checkbox() {
+interface CheckboxProps {
+  isChecked: boolean;
+}
+
+export function Checkbox({ isChecked }: CheckboxProps) {
   return (
     <label className={styles.groupCheckbox}>
-      <input type="checkbox" />
+      <input type="checkbox" defaultChecked={isChecked}/>
     </label>
   )
 }

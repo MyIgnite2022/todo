@@ -1,4 +1,3 @@
-import { FormEvent } from "react";
 import { TasksProps } from "../../App";
 import { CreateButton } from "../CreateButton";
 import { Input } from "../Input";
@@ -11,26 +10,41 @@ interface NewtaskProps {
 
 export function Newtask({tasks, setTasks}: NewtaskProps) {
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+  // NOTE tipar event
 
-    // NOTE Capturar valores
+  function handleCreateNewTask(event: any) {
+    event.preventDefault()
+    const newTask = event.target.task.value
+    const newTaskEmpty = !newTask
+
+    if(newTaskEmpty) {
+      return
+    }
+
+    const checkIfTaskExists = tasks.find(task => task.description === newTask)
+
+    if(checkIfTaskExists) {
+      alert('A task já existe!')
+      return
+    }
 
     setTasks([
       ...tasks,
       {
-        description: `${new Date().getTime()}`,
+        description: newTask,
         isChecked: false
       }
     ]);
+
+    event.target.task.value = ''
   }
 
   return (
-    <form onSubmit={handleSubmit} 
+    <form onSubmit={handleCreateNewTask}
       className={styles.newtask} 
       style={{marginTop: '-1.625rem'}}
     >
-      <Input />
+      <Input name="task"/>
       <CreateButton />
     </form>
   )

@@ -19,7 +19,7 @@ function App() {
 
   function Tasks() {
     return tasks.map(task => {
-      return <Task key={task.description} />
+      return <Task key={task.description} task={task} />
     })
   } 
 

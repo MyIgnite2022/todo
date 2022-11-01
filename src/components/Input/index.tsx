@@ -2,17 +2,16 @@
 
 
  interface InputProps {
-  placeholder?: string;
-  boderColor?: string;
   value?: string;
-  bg?: string;
+  name: string;
  }
 
-export function Input(props: InputProps) {
+export function Input({name, value}: InputProps) {
   return (
     <input 
       className={styles.input} 
       placeholder="Adicione uma nova tarefa"
+      name={name}
     />
   )
 }

@@ -3,7 +3,7 @@ import styles from './style.module.scss';
 
 export function CreateButton() {
   return (
-    <button className={styles.createButton}>
+    <button type="submit" className={styles.createButton}>
       Criar <img src={plusImg} />
     </button>
   )
