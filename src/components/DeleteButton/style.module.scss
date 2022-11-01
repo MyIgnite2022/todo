@@ -23,6 +23,7 @@
   
   &:hover {
     background: var(--gray-400);
+    cursor: pointer;
 
     &:after { 
       background: url(../../assets/trashHover.svg);

@@ -9,7 +9,8 @@
   transition: background 0.2s;
 
   &:hover {
-    background: rgba($color: #5E60CE, $alpha: .2)
+    background: rgba($color: #5E60CE, $alpha: .2);
+    cursor: pointer;
   }
 
   input {
@@ -32,6 +33,7 @@
         left: 2px;
 
         z-index: 999;
+        cursor: pointer;
       }
 
       &:after {
