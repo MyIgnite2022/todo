@@ -18,10 +18,17 @@ function App() {
   const [tasks, setTasks] = useState<TasksProps[]>([])
 
   function Tasks() {
-    return tasks.map(task => {
-      return <Task key={task.description} task={task} />
-    })
-  } 
+    return tasks.map(task => (
+      <Task 
+        key={task.description} 
+        task={task} 
+        tasks={tasks}
+        setTasks={setTasks}
+      />
+    ))
+  }
+
+  console.log('tasks', tasks)
 
   return (
     <>
