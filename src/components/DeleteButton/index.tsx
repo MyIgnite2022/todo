@@ -1,6 +1,10 @@
 import styles from './style.module.scss';
 
-export function DeleteButton() {
+interface DeleteButtonProps {
+  onClick: () => void;
+}
+
+export function DeleteButton({ onClick }: DeleteButtonProps) {
   return (
     <button className={styles.deleteButton}></button>
   )
